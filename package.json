@@ -1,0 +1,32 @@
+{
+  "name": "@classycrafter/super-logger",
+  "version": "1.0.31",
+  "description": "A super customisable logger",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheDogHusky/super-logger.git"
+  },
+  "keywords": [
+    "logger",
+    "customisable",
+    "super",
+    "super-logger"
+  ],
+  "author": "ClassyCrafter",
+  "license": "GNU-GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/TheDogHusky/super-logger/issues"
+  },
+  "homepage": "https://github.com/TheDogHusky/super-logger#readme",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "fs": "^0.0.1-security",
+    "moment": "^2.29.2",
+    "moment-timezone": "^0.5.34",
+    "path": "^0.12.7"
+  }
+}
