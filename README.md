@@ -22,7 +22,7 @@ npm i super-logger
 ```js
 const superlogger = require('@classycrafter/super-logger');
 
-const myLogger = new supperlogger.Logger({
+const myLogger = new superlogger.Logger({
     name: "Example",
     timezone: "Europe/Paris",
     tzformat: 24,
@@ -53,3 +53,4 @@ myLogger.custom("This is a custom example", "CustomTitle", "OptionnalProcess");
 > This package is under GNU GPL 3.0.
 > Use the package as your wishes. **WE AREN'T RESPONSIBLE FOR WHAT YOU DO WITH THE PACKAGE!**
 > You found a bug? Report it on the [GitHub](https://github.com/TheDogHusky/super-logger) or send me an email!
+> Any suggestions? Send them on the github by opening an Issue or send me an email!
