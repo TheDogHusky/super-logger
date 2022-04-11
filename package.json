@@ -1,6 +1,6 @@
 {
   "name": "@classycrafter/super-logger",
-  "version": "1.0.31",
+  "version": "1.1.32",
   "description": "A super customisable logger",
   "main": "index.js",
   "scripts": {

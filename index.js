@@ -10,7 +10,7 @@ const { Custom } = require('./other/custom')
 /**
  * @author ClassyCrafter
  * @description A super package to create a super customisable and advanced logger
- * @version 1.0.31
+ * @version 1.1.32
  * @license GNU-GPL-3.0
  */
 
@@ -43,7 +43,7 @@ class Logger {
      */
     /**
      * @constructor
-     * @param {Options} Options The options
+     * @param {Options} Options The options related to the Logger
      */
     constructor(Options) {
         // Defines  E V E R Y T H I N G
@@ -101,6 +101,7 @@ class Logger {
      * @param {String} formattedMessage The formatted message to write!
      */
     writefile(formattedMessage) {
+        if(this.writelogs === false) return;
         fs.appendFile(this.filepath, formattedMessage + '\n', (err) => {
             if (err) {
                 throw new Error(err);
@@ -120,14 +121,14 @@ class Logger {
             console.log(
                 `${chalk.cyan(this.date)}${chalk.gray(` - `)}${chalk.blue("[")}${chalk.cyanBright(`${this.name}`)} ${chalk.grey("/")} ${chalk.hex("#00ffe8")(process)}${chalk.blue("]")} ${chalk.green("Info")} ${chalk.gray("▪")} ${chalk.greenBright(text)}`
             );
-            this.writefile(`${this.date} - [${this.name} / ${process}] Info ▪ ${text}`)
+            this.writefile(`${this.date} - [${this.name} / ${process}] Info ▪ ${text}`);
         } else {
             console.log(
                 `${chalk.cyan(this.date)}${chalk.gray(` - `)}${chalk.blue("[")}${chalk.cyanBright(`${this.name}`)}${chalk.blue("]")} ${chalk.green("Info")} ${chalk.gray("▪")} ${chalk.greenBright(text)}`
             );
-            this.writefile(`${this.date} - [${this.name}] Info ▪ ${text}`)
-        }
-    }
+            this.writefile(`${this.date} - [${this.name}] Info ▪ ${text}`);
+        };
+    };
 
     /**
      * 
@@ -138,15 +139,15 @@ class Logger {
         if(process) {
             console.log(
                 `${chalk.cyan(this.date)}${chalk.gray(` - `)}${chalk.blue("[")}${chalk.cyanBright(`${this.name}`)} ${chalk.grey("/")} ${chalk.hex("#00ffe8")(process)}${chalk.blue("]")} ${chalk.yellow("Warn")} ${chalk.gray("▪")} ${chalk.yellowBright(text)}`
-            )
+            );
             this.writefile(`${this.date} - [${this.name} / ${process}] Warn ▪ ${text}`);
         } else {
             console.log(
                 `${chalk.cyan(this.date)}${chalk.gray(` - `)}${chalk.blue("[")}${chalk.cyanBright(`${this.name}`)}${chalk.blue("]")} ${chalk.yellow("Warn")} ${chalk.gray("▪")} ${chalk.yellowBright(text)}`
-            )
+            );
             this.writefile(`${this.date} - [${this.name}] Warn ▪ ${text}`);
-        }
-    }
+        };
+    };
 
 
     error(text, process) {
@@ -158,10 +159,10 @@ class Logger {
         } else {
             console.log(
                 `${chalk.cyan(this.date)}${chalk.gray(` - `)}${chalk.blue("[")}${chalk.cyanBright(`${this.name}`)}${chalk.blue("]")} ${chalk.red("Error")} ${chalk.gray("▪")} ${chalk.redBright(text)}`
-            );
+            );;
             this.writefile(`${this.date} - [${this.name}] Error ▪ ${text}`);
-        }
-    }
+        };
+    };
 
     /**
      * 
@@ -181,9 +182,9 @@ class Logger {
                 `${chalk.hex(this.customisation.datecolor)(this.date)}${chalk.hex(this.customisation.gray)(" - ")}${chalk.blue("[")}${chalk.hex(this.customisation.namecolor)(this.name)}${chalk.blue("]")} ${chalk.hex(this.customisation.titlecolor)(title)} ${chalk.hex(this.customisation.gray)(this.customisation.character)} ${chalk.hex(this.customisation.textcolor)(text)}`
             );
             this.writefile(`${this.date} - [${this.name}] ${title} ${this.customisation.character} ${text}`);
-        }
-    }
-}
+        };
+    };
+};
 
 exports.Logger = Logger;
 exports.Utils = Utils;
