@@ -16,7 +16,7 @@
 ## Utilisation & Examples
 > To install it, run the following command:
 ```batch
-npm i super-logger
+npm i @classycrafter/super-logger
 ```
 > Code Example
 ```js

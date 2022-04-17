@@ -10,7 +10,7 @@ const { Custom } = require('./other/custom')
 /**
  * @author ClassyCrafter
  * @description A super package to create a super customisable and advanced logger
- * @version 1.1.33
+ * @version 1.1.34
  * @license GNU-GPL-3.0
  */
 
