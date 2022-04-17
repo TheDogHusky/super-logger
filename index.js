@@ -5,12 +5,12 @@ const fs = require('fs');
 const path = require('path');
 const { Options } = require('./other/Options')
 const { Utils } = require('./other/Utils')
-const { Custom } = require('./other/custom')
+const { Custom } = require('./other/Custom')
 
 /**
  * @author ClassyCrafter
  * @description A super package to create a super customisable and advanced logger
- * @version 1.1.34
+ * @version 1.2.34
  * @license GNU-GPL-3.0
  */
 
