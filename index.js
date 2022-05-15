@@ -10,7 +10,7 @@ const { Custom } = require('./other/Custom')
 /**
  * @author ClassyCrafter
  * @description A super package to create a super customisable and advanced logger
- * @version 1.2.34
+ * @version 1.3.34
  * @license GNU-GPL-3.0
  */
 
@@ -59,6 +59,7 @@ class Logger {
         if(!this.name) throw new Error("Please specify the name of the Logger in the constructor.");
         if(!this.timezone) throw new Error("Please specify a timezone in the constructor");
         if(!Utils.isValidTimezone(this.timezone)) throw new Error(`The timezone ${this.timezone} is not a valid timezone.`);
+        if(!this.dirpath) this.writelogs === false;
         if(this.writelogs === true && !this.dirpath) throw new Error("The writelogs parameter is enabled, but there is no dirpath specified.");
         if(this.writelogs === true && !Utils.isValidPath(this.dirpath)) throw new Error("The dirpath is invalid.");
         // Custom Verifications
