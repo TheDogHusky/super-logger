@@ -10,7 +10,7 @@ const { Custom } = require('./other/Custom')
 /**
  * @author ClassyCrafter
  * @description A super package to create a super customisable and advanced logger
- * @version 1.3.34
+ * @version 1.4.35
  * @license GNU-GPL-3.0
  */
 
@@ -77,9 +77,10 @@ class Logger {
         if(this.iscustomenabled === true && !this.customisation.datecolor) throw new Error("The customisation is enabled but there isn't a date color in hexadecimal.");
         if(this.iscustomenabled === true && !Utils.isValidHEX(this.customisation.datecolor)) throw new Error("The customisation's date color isn't a valid hexadecimal.");
 
+        this.refreshDates();
         // FS Part
         if(this.writelogs === false) return;
-        this.filepath = path.join(this.dirpath, `${this.name}.log`);
+        this.filepath = path.join(this.dirpath, `${moment(this.dateRaw).tz(String(this.timezone)).format("D-M-YYYY--HH_mm_ss")}.log`);
     };
 
     // Some utility functions
@@ -89,10 +90,13 @@ class Logger {
     refreshDates() {
         const d = new Date();
         if(this.tzformat === 24) {
+            this.dateRaw = d;
             this.date = moment(d).tz(String(this.timezone)).format("HH:mm:ss");
         } else if(this.tzformat === 12) {
             this.date = moment(d).tz(String(this.timezone)).format("hh:mm:ss A");
+            this.dateRaw = d;
         } else {
+            this.dateRaw = d;
             this.date = moment(d).tz(String(this.timezone)).format("HH:mm:ss");
         };
     };

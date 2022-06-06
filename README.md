@@ -49,8 +49,9 @@ myLogger.custom("This is a custom example", "CustomTitle", "OptionnalProcess");
 > <img src="https://cdn.discordapp.com/attachments/670181225477963776/961629432123105280/unknown.png" />
 > <img src="https://cdn.discordapp.com/attachments/670181225477963776/961632075054710894/unknown.png" />
 ## What's new?
-> In version 1.1.32 we fixed a big bug with the writeLogs and all things related to files. Please download latest release for a better experience.
-> In version 1.1.33 we just added those What's New things.
+In version 1.1.32 we fixed a big bug with the writeLogs and all things related to files. Please download latest release for a better experience.
+In version 1.1.33 we just added those What's New things.
+> In version 1.4.34 we changed the way to stock logs. Now it's in multiple files ! In 1.4.35 we added that to the readme since we forgot...
 ## Additionnal Informations
 > This package is under GNU GPL 3.0.
 > Use the package as your wishes. **WE AREN'T RESPONSIBLE FOR WHAT YOU DO WITH THE PACKAGE!**
